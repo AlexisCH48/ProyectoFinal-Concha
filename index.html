@@ -9,19 +9,22 @@
     <title>Pre-entrega3-E-commerce</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar bg-body-tertiary justify-content-center">
-            <ul class="nav">
-                <li class="nav-item">
+    <header class="menuNav">
+        <nav class="navbar justify-content-center py-3">
+            <div class="col d-flex align-items-star ps-5">
+                <a class="logo" href="../Pre-entrega3/index.html"><i class="bi bi-hypnotize"></i></a>
+            </div>
+            <ul class="nav pe-5">
+                <li class="nav-item pe-5">
                     <a class="botonMenu nav-link active" aria-current="page" href="#"><i class="bi bi-boxes p-1"></i>Productos</a>
                 </li>
-                <li class="nav-item">
-                    <a class="botonMenu nav-link" href="#">Buscar</a>
+                <li class="nav-item pe-5">
+                    <a class="botonMenu nav-link" href="#"><i class="bi bi-search p-1"></i>Buscar</a>
                 </li>
-                <li class="nav-item">
-                    <a class="botonMenu nav-link" href="#">Contacto</a>
+                <li class="nav-item pe-5">
+                    <a class="botonMenu nav-link" href="#"><i class="bi bi-journal-bookmark p-1"></i>Contacto</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item pe-5">
                     <a class="botonCarrito nav-link" href="../Pre-entrega3/pages/carrito.html"><i class="bi bi-cart4 p-1"></i>Carrito
                         <span class="numero">0</span>
                     </a>
@@ -30,58 +33,53 @@
         </nav>
     </header>
 
-    <main>
-        <h1 class="tituloPrincipal">Todos los Productos</h1>
-        <div class="contenedorProductos">
-            <div class="productos">
-                <img class="imagenProducto" src="../Pre-entrega3/img/polera_1.png" alt="Polera negra">
-                <div class="detallesProducto">
-                    <h2 class="nombreProducto">Polera 01</h2>
-                    <p class="precioProducto">$1500</p>
-                    <button class="agregarProducto">Agregar (+)</button>
+    <div class="wrapper">
+        <main>
+            <h1 class="tituloPrincipal">Todos los Productos</h1>
+            <div class="contenedorProductos">
+                <div class="productos">
+                    <img class="imagenProducto" src="../Pre-entrega3/img/polera_1.jpg" alt="Polera negra">
+                    <div class="detallesProducto">
+                        <h2 class="nombreProducto">Polera 01</h2>
+                        <p class="precioProducto">$1500</p>
+                        <button class="agregarProducto">Agregar (+)</button>
+                    </div>
+                </div>
+
+                <div class="productos">
+                    <img class="imagenProducto" src="../Pre-entrega3/img/polera_2.jpg" alt="Polera gris">
+                    <div class="detallesProducto">
+                        <h2 class="nombreProducto">Polera 02</h2>
+                        <p class="precioProducto">$1300</p>
+                        <button class="agregarProducto">Agregar (+)</button>
+                    </div>
+                </div>
+
+                <div class="productos">
+                    <img class="imagenProducto" src="../Pre-entrega3/img/polera_3.jpg" alt="Polera gris oscuro">
+                    <div class="detallesProducto">
+                        <h2 class="nombreProducto">Polera 03</h2>
+                        <p class="precioProducto">$1600</p>
+                        <button class="agregarProducto">Agregar (+)</button>
+                    </div>
+                </div>
+
+                <div class="productos">
+                    <img class="imagenProducto" src="../Pre-entrega3/img/polera_4.jpg" alt="Polera manga larga">
+                    <div class="detallesProducto">
+                        <h2 class="nombreProducto">Polera 04</h2>
+                        <p class="precioProducto">$1700</p>
+                        <button class="agregarProducto">Agregar (+)</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
+    </div>
+    
 
-        <div class="contenedorProductos">
-            <div class="productos">
-                <img class="imagenProducto" src="../Pre-entrega3/img/polera_2.jpg" alt="Polera gris">
-                <div class="detallesProducto">
-                    <h2 class="nombreProducto">Polera 02</h2>
-                    <p class="precioProducto">$1300</p>
-                    <button class="agregarProducto">Agregar (+)</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="contenedorProductos">
-            <div class="productos">
-                <img class="imagenProducto" src="../Pre-entrega3/img/polera_3.jpg" alt="Polera gris oscuro">
-                <div class="detallesProducto">
-                    <h2 class="nombreProducto">Polera 03</h2>
-                    <p class="precioProducto">$1600</p>
-                    <button class="agregarProducto">Agregar (+)</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="contenedorProductos">
-            <div class="productos">
-                <img class="imagenProducto" src="../Pre-entrega3/img/polera_4.jpg" alt="Polera manga larga">
-                <div class="detallesProducto">
-                    <h2 class="nombreProducto">Polera 04</h2>
-                    <p class="precioProducto">$1700</p>
-                    <button class="agregarProducto">Agregar (+)</button>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer class="py-2">
-        <div class="p-5 bg-body-tertiary rounded-3">
-            <div class="container-fluid py-3">
-                <p class="col-md-8">© 2024, todos los derechos reservados.</p>
-            </div>
+    <footer class="py-2 d-flex justify-content-center">
+        <div class="p-5">
+            <p >© 2024, todos los derechos reservados.</p>
         </div>
     </footer>
 
