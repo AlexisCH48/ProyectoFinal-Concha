@@ -57,8 +57,6 @@ main {
 }
 
 .imagenProducto img {
-    max-width: 80%;
-    border-radius: 1rem;
     display: flex;
     justify-content: center;
 }

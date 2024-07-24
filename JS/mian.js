@@ -1,6 +1,6 @@
-// Datos productos
+// Array datos productos
 const productos = [
-    // poleras
+    // poleras o remera
     {
         id:1,
         titulo: "polera 01",
@@ -43,15 +43,11 @@ const productos = [
     },
 ];
 
-// const contenedorProductos = document.querySelector("#contenedorProductos");
-// let agregarProducto = document.querySelectorAll(".agregarProducto");
-// const numero = document.querySelector("#numero");
-
-
+// funcion para insertar las etiquetas HTML con los datos de los productos del array
 function cargarProductos(productos){
     let productosHTML = "";
 
-    for (const producto of productos){
+    for (const producto of productos){ //mostrar contenidos productos
         productosHTML += `
         <div class="card text-center">
             <img src="${producto.imagen}" class="imagenProducto card-img-top" alt="${producto.titulo}">
@@ -66,53 +62,56 @@ function cargarProductos(productos){
     document.getElementById("contenedorProductos").innerHTML = productosHTML
 }
 
+// funcion para agregar los productos al carrito y guardar los datos en el localstorage
 function agregarAlCarrito (id){
     const producto = productos.find(item => item.id == id);
-    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    carrito.push(producto);
+    const carrito = guardarCarritoStorage();
+    const productoEnCarrito = carrito.find(item => item.id == id);
 
+    // validacion de la cantidad de productos en el carrito (por producto)
+    if (productoEnCarrito){
+        productoEnCarrito.cantidad += 1;
+    }else{
+        producto.cantidad = 1;
+        carrito.push(producto);
+    };
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    numeroTotalCarrito()
+    botonCarrito()
 }
 
-function numeroTotalCarrito(){
-    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    document.getElementById("carritoNumero").innerHTML = carrito.length;
+// funcion para eliminar un producto de la lista en el carrito
+function borrarProducto(id){
+    const carrito = guardarCarritoStorage();
+    const nuevoCarrito = carrito.filter(item => item.id != id);
+    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
+    productosEnCarrito();
+    botonCarrito();
+}
 
+// funcion papra actualiza la cantidad de productos en el carrito
+function botonCarrito(){
+    const carrito = guardarCarritoStorage();
+    const totalProductos = carrito.reduce((total, producto) => total + producto.cantidad, 0);
+    document.getElementById("carritoNumero").innerHTML = totalProductos;
+}
+
+// funcion para contar el numero de productos a comprar en el carrito
+function numeroTotalCarrito(){
+    const carrito = guardarCarritoStorage();
     return carrito.length;
 }
 
+// funcion para reutilizar los datos guardados en el localstorage
+function guardarCarritoStorage(){
+    return JSON.parse(localStorage.getItem("carrito")) || [];
+}
+
+// funcion para vaciar el carrito borrando el localstorage
+function eliminarCarrito(){
+    localStorage.removeItem("carrito");
+    productosEnCarrito();
+    botonCarrito()
+}
+
 cargarProductos(productos);
-numeroTotalCarrito()
-
-
-
-// function actualizarAgregarProducto(){
-//     agregarProducto = document.querySelectorAll(".agregarProducto");
-//     agregarProducto.forEach(boton =>{
-//         boton.addEventListener("click", agregarAlCarrito)
-//     })
-    
-// };
-
-// const productosEnCarrito = [];
-
-// function agregarAlCarrito(e){
-//     const idBoton = e.currentTarget.id;
-//     const productoAgregado = productos.find(producto => producto.id === idBoton);
-
-//     if (productosEnCarrito.some(producto => producto.id === idBoton)){
-//         const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
-//         productosEnCarrito[index].cantidad++;
-//     }else {
-//         productoAgregado.cantidad = 1;
-//         productosEnCarrito.push(productoAgregado);
-//     }
-//     actualizarNumeroCarrito();
-// };
-
-// function actualizarNumeroCarrito(){
-//     let nuevoNumero = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
-//     numero.innertext = nuevoNumero;
-//     console.log(numero);
-// }
+botonCarrito()
