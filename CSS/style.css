@@ -47,7 +47,7 @@ main {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     padding-inline: 70px;
-    justify-content: center;
+    text-align: center;
 }
 
 .productos {
@@ -56,9 +56,11 @@ main {
     justify-items: center;
 }
 
-.imagenProducto {
+.imagenProducto img {
     max-width: 80%;
     border-radius: 1rem;
+    display: flex;
+    justify-content: center;
 }
 
 .detallesProducto {
