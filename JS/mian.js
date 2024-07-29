@@ -50,7 +50,7 @@ function cargarProductos(productos){
     for (const producto of productos){ //mostrar contenidos productos
         productosHTML += `
         <div class="card text-center">
-            <img src="${producto.imagen}" class="imagenProducto card-img-top" alt="${producto.titulo}">
+            <img src="./img/${producto.imagen}" class="imagenProducto card-img-top" alt="${producto.titulo}">
             <div class="card-body detallesProducto">
                 <h5 class="card-title nombreProducto">${producto.titulo}</h5>
                 <p class="card-text precioProducto">$${producto.precio} CLP</p>
