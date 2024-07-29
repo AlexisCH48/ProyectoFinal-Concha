@@ -6,7 +6,7 @@ function productosEnCarrito(){
     if (numeroTotalCarrito() > 0){ //validacion de productos en el carrito
         for (const producto of carrito){
             productosHTML +=`<div class="carritoProducto d-flex justify-content-evenly text-center">
-                    <img class="carritoProductoImagen" src="../img/${producto.imagen}" alt="${producto.titulo}">
+                    <img class="carritoProductoImagen" src="./img/${producto.imagen}" alt="${producto.titulo}">
                     <div class="carritoProductoNombre">
                         <small>Título</small>
                         <h2>${producto.titulo}</h2>
