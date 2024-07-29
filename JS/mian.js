@@ -4,7 +4,7 @@ const productos = [
     {
         id:1,
         titulo: "polera 01",
-        imagen: "../../Pre-entrega3/img/polera_1.jpg",
+        imagen: "../img/polera_1.jpg",
         categoria: {
             nombre: "poleras",
             id:"poleras"
@@ -14,7 +14,7 @@ const productos = [
     {
         id:2,
         titulo: "polera 02",
-        imagen: "../../Pre-entrega3/img/polera_2.jpg",
+        imagen: "../img/polera_2.jpg",
         categoria: {
             nombre: "poleras",
             id:"poleras"
@@ -24,7 +24,7 @@ const productos = [
     {
         id:3,
         titulo: "polera 03",
-        imagen: "../../Pre-entrega3/img/polera_3.jpg",
+        imagen: "../img/polera_3.jpg",
         categoria: {
             nombre: "poleras",
             id:"poleras"
@@ -34,7 +34,7 @@ const productos = [
     {
         id:4,
         titulo: "polera 04",
-        imagen: "../../Pre-entrega3/img/polera_4.jpg",
+        imagen: "../img/polera_4.jpg",
         categoria: {
             nombre: "poleras",
             id:"poleras"
