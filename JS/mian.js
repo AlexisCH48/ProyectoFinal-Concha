@@ -4,7 +4,7 @@ const productos = [
     {
         id:1,
         titulo: "polera 01",
-        imagen: "../img/polera_1.jpg",
+        imagen: "polera_1.jpg",
         categoria: {
             nombre: "poleras",
             id:"poleras"
@@ -14,7 +14,7 @@ const productos = [
     {
         id:2,
         titulo: "polera 02",
-        imagen: "../img/polera_2.jpg",
+        imagen: "polera_2.jpg",
         categoria: {
             nombre: "poleras",
             id:"poleras"
@@ -24,7 +24,7 @@ const productos = [
     {
         id:3,
         titulo: "polera 03",
-        imagen: "../img/polera_3.jpg",
+        imagen: "polera_3.jpg",
         categoria: {
             nombre: "poleras",
             id:"poleras"
@@ -34,7 +34,7 @@ const productos = [
     {
         id:4,
         titulo: "polera 04",
-        imagen: "../img/polera_4.jpg",
+        imagen: "polera_4.jpg",
         categoria: {
             nombre: "poleras",
             id:"poleras"
@@ -50,7 +50,7 @@ function cargarProductos(productos){
     for (const producto of productos){ //mostrar contenidos productos
         productosHTML += `
         <div class="card text-center">
-            <img src="${producto.imagen}" class="imagenProducto card-img-top" alt="${producto.titulo}">
+            <img src="./img/${producto.imagen}" class="imagenProducto card-img-top" alt="${producto.titulo}">
             <div class="card-body detallesProducto">
                 <h5 class="card-title nombreProducto">${producto.titulo}</h5>
                 <p class="card-text precioProducto">$${producto.precio} CLP</p>
