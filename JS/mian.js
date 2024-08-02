@@ -1,65 +1,28 @@
-// Array datos productos
-const productos = [
-    // poleras o remera
-    {
-        id:1,
-        titulo: "polera 01",
-        imagen: "polera_1.jpg",
-        categoria: {
-            nombre: "poleras",
-            id:"poleras"
-        },
-        precio: "1500"
-    },
-    {
-        id:2,
-        titulo: "polera 02",
-        imagen: "polera_2.jpg",
-        categoria: {
-            nombre: "poleras",
-            id:"poleras"
-        },
-        precio: "1300"
-    },
-    {
-        id:3,
-        titulo: "polera 03",
-        imagen: "polera_3.jpg",
-        categoria: {
-            nombre: "poleras",
-            id:"poleras"
-        },
-        precio: "1600"
-    },
-    {
-        id:4,
-        titulo: "polera 04",
-        imagen: "polera_4.jpg",
-        categoria: {
-            nombre: "poleras",
-            id:"poleras"
-        },
-        precio: "1700"
-    },
-];
+const API_URL = "https://fakestoreapi.com"
+let productos = [];
 
-// funcion para insertar las etiquetas HTML con los datos de los productos del array
-function cargarProductos(productos){
-    let productosHTML = "";
+function cargarProductos(API_URL){
+    fetch(`${API_URL}/products`)
+        .then(res=>res.json())
+        .then(data => {
+            productos = data; // Asignar los datos obtenidos a la variable productos
+            let productosHTML = "";
 
-    for (const producto of productos){ //mostrar contenidos productos
-        productosHTML += `
-        <div class="card text-center">
-            <img src="./img/${producto.imagen}" class="imagenProducto card-img-top" alt="${producto.titulo}">
-            <div class="card-body detallesProducto">
-                <h5 class="card-title nombreProducto">${producto.titulo}</h5>
-                <p class="card-text precioProducto">$${producto.precio} CLP</p>
-                <p class="card-text"><button class="agregarProducto" onclick="agregarAlCarrito(${producto.id});">Agregar (+)</button></p>
-            </div>
-        </div>`;
-    }
-    document.getElementById("contenedorProductos").innerHTML = productosHTML
-}
+            data.forEach(element => {
+                productosHTML += `
+            <div class="card text-center">
+                <img src="${element.image}" class="imagenProducto card-img-top" alt="${element.title}">
+                <div class="card-body detallesProducto">
+                    <h5 class="card-title nombreProducto">${element.title}</h5>
+                    <p class="card-text precioProducto">$${element.price} CLP</p>
+                    <p class="card-text"><button class="agregarProducto" onclick="agregarAlCarrito(${element.id});">Agregar (+)</button></p>
+                </div>
+            </div>`;
+            });
+            document.getElementById("contenedorProductos").innerHTML = productosHTML;
+            console.log(data);
+        });
+};
 
 // funcion para agregar los productos al carrito y guardar los datos en el localstorage
 function agregarAlCarrito (id){
@@ -112,5 +75,5 @@ function eliminarCarrito(){
     botonCarrito()
 }
 
-cargarProductos(productos);
+cargarProductos(API_URL);
 botonCarrito()

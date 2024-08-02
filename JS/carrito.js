@@ -6,10 +6,10 @@ function productosEnCarrito(){
     if (numeroTotalCarrito() > 0){ //validacion de productos en el carrito
         for (const producto of carrito){
             productosHTML +=`<div class="carritoProducto d-flex justify-content-evenly text-center">
-                    <img class="carritoProductoImagen" src="../img/${producto.imagen}" alt="${producto.titulo}">
+                    <img class="carritoProductoImagen" src="${producto.image}" alt="${producto.title}">
                     <div class="carritoProductoNombre">
                         <small>Título</small>
-                        <h2>${producto.titulo}</h2>
+                        <h2>${producto.title}</h2>
                     </div>
                     <div class="carritoProductoCantidad">
                         <small>Cantidad</small>
@@ -17,11 +17,11 @@ function productosEnCarrito(){
                     </div>
                     <div class="carritoProductoPrecio">
                         <small>Precio</small>
-                        <p>$${producto.precio} CLP</p>
+                        <p>$${producto.price} CLP</p>
                     </div>
                     <div class="carritoProductoSubtotal">
                         <small>Subtotal</small>
-                        <p>$${producto.precio * producto.cantidad} CLP</p>
+                        <p>$${producto.price * producto.cantidad} CLP</p>
                     </div>
                     <button class="carritoProductoEliminar" onclick="borrarProducto(${producto.id});"><i class="bi bi-trash ps-2"></i></button>
                 </div>`;
@@ -45,12 +45,13 @@ function productosEnCarrito(){
         productosHTML += `<p class="carritoVacio">El carrito esta vacio <i class="bi bi-cart-x"></i></p>`
     };
     document.getElementById("contenedorCarrito").innerHTML = productosHTML;
+    
 };
 
 // Funcion para calcular el precio a pagar en base a las cantidades de productos en el carrito
 function calcularTotalCarrito(){
     const totalCarrito = guardarCarritoStorage();
-    return totalCarrito.reduce((total, producto) => total + (producto.precio * producto.cantidad), 0);
+    return totalCarrito.reduce((total, producto) => total + (producto.price * producto.cantidad), 0);
 }
 
 productosEnCarrito();

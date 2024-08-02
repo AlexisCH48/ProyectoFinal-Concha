@@ -31,6 +31,13 @@ a {
 }
 
 
+.wrapper {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 main {
     background-color: gainsboro;
     min-height: 100vh;
