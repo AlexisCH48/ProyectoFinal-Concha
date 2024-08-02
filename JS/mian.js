@@ -6,6 +6,7 @@ function cargarProductos(API_URL){
         .then(res=>res.json())
         .then(data => {
             productos = data; // Asignar los datos obtenidos a la variable productos
+            localStorage.setItem('productos', JSON.stringify(productos)); // Guardar los productos en localStorage
             let productosHTML = "";
 
             data.forEach(element => {
