@@ -7,13 +7,14 @@ function cargarProductos(API_URL){
         .then(data => {
             productos = data; // Asignar los datos obtenidos a la variable productos
             localStorage.setItem('productos', JSON.stringify(productos)); // Guardar los productos en localStorage
+
             let productosHTML = "";
 
             data.forEach(element => {
                 productosHTML += `
-            <div class="card text-center">
-                <img src="${element.image}" class="imagenProducto card-img-top" alt="${element.title}">
-                <div class="card-body detallesProducto">
+                <div class="card text-center">
+                <img src="${element.image}" class="imagenProducto card-img-top" alt="${element.title}" onclick="detalleProducto(${element.id});">
+                <div class="card-body">
                     <h5 class="card-title nombreProducto">${element.title}</h5>
                     <p class="card-text precioProducto">$${element.price} CLP</p>
                     <p class="card-text"><button class="agregarProducto" onclick="agregarAlCarrito(${element.id});">Agregar (+)</button></p>
@@ -24,6 +25,33 @@ function cargarProductos(API_URL){
             console.log(data);
         });
 };
+
+function detalleProducto(id) {
+    const producto = productos.find(item => item.id == id);
+    if (producto) {
+        Swal.fire({
+            title: producto.title,
+            html: `
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col align-content-center">
+                        <img class="imagen pt-4" src="${producto.image}" alt="${producto.title}" ">
+                    </div>
+                    <div class="col align-content-center">
+                        <p>${producto.description}</p>
+                        <p>Precio: $${producto.price} CLP</p>
+                    </div>
+                </div>`,
+            showCloseButton: true,
+            showConfirmButton: true,
+            confirmButtonText: 'Añadir al carrito',
+            width :'80%',
+            customClass: {
+                confirmButton: 'custom-confirm-button'
+            }
+        });
+    }
+}
 
 // funcion para agregar los productos al carrito y guardar los datos en el localstorage
 function agregarAlCarrito (id){
@@ -78,3 +106,32 @@ function eliminarCarrito(){
 
 cargarProductos(API_URL);
 botonCarrito()
+
+
+// efectos y animaciones
+
+anime({
+    targets: '.nav',
+    translateX: [100, 0],
+    duration: 1200,
+    opacity: [0, 1],
+    delay: (el, i) => {
+        return 300 + 100 * i;
+    },
+});
+
+anime({
+    targets: '.nav .nav-link i',
+    duration: 1200,
+    opacity: [0, 1],
+    delay: 700
+});
+
+anime({
+    targets: '.logo',
+    translateX: [-100, 100],
+    duration: 1200,
+    delay: (el, i) => {
+        return 1000 + 100 * i;
+    },
+});

@@ -106,6 +106,29 @@ footer {
     color: azure !important;
 }
 
+.detalleProducto{
+    display: inline-block;
+    
+
+}
+.imagen {
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    height: 400px;
+    width: 400px;
+}
+
+.custom-confirm-button {
+    border: 0;
+    background-color: black;
+    color: azure ;
+    padding: .4rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid azure;
+    transition: background-color .2s, color .2s;
+}
+
 
 /* carrito */
 
