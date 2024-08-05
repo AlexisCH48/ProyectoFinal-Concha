@@ -1,5 +1,12 @@
-// Función para filtrar por precio
-function filtrarPorPrecio() {
-    const precioSeleccionado = document.getElementById('filtroPrecio').value;
-    // Lógica para mostrar productos según el precio seleccionado
+function filtrarProductos(categoria) {
+    const productosFiltrados = productos.filter(producto => producto.category === categoria);
+    mostrarProductos(productosFiltrados);
 }
+
+function mostrarTodosLosProductos() {
+    mostrarProductos(productos);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    cargarProductos(API_URL);
+});
