@@ -25,6 +25,20 @@ anime({
     },
 });
 
+anime({
+    targets: '.tituloPrincipal',
+    translateY: [100,0],
+    opacity: [0, 1],
+    easing: 'easeInQuad',
+})
+
+anime({
+    targets: '.banner',
+    translate: [100,0],
+    opacity: [0, 1],
+    easing: 'easeInQuad',
+})
+
 document.addEventListener('DOMContentLoaded', function () {
     const filterButtons = document.querySelectorAll('#filtros'); // Cambia '.filter-button' por tu selector de botones
     // Configuración de la animación

@@ -53,6 +53,10 @@ function detalleProducto(id) {
             customClass: {
                 confirmButton: 'custom-confirm-button'
             }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                agregarAlCarrito(id); // Llama a la función agregarAlCarrito con el ID del producto
+            }
         });
     }
 };
