@@ -1,10 +1,10 @@
 // funcion que agrega las etiquetas HTML de los productos selecionados en el carrito
 function productosEnCarrito(){
-    const carrito = guardarCarritoStorage();
+    const carrito = guardarCarritoStorage();//Cargar los datos almacenados en el localstorage
     let productosHTML = "";
 
     if (numeroTotalCarrito() > 0){ //validacion de productos en el carrito
-        for (const producto of carrito){
+        for (const producto of carrito){ //Datos para mostrarlos en el carrito
             productosHTML +=`
             <div class="container text-center ">
                 <div class="row carritoProducto">
@@ -58,13 +58,13 @@ function productosEnCarrito(){
     document.getElementById("contenedorCarrito").innerHTML = productosHTML;
 };
 
-// Funcion para calcular el precio a pagar en base a las cantidades de productos en el carrito
+//Funcion para calcular el precio a pagar en base a las cantidades de productos en el carrito
 function calcularTotalCarrito(){
     const totalCarrito = guardarCarritoStorage();
     return totalCarrito.reduce((total, producto) => total + (producto.price * producto.cantidad), 0);
 };
 
-// Función para cambiar la cantidad de un producto en el carrito
+//Función para cambiar la cantidad de un producto en el carrito
 function cambiarCantidad(id, cantidad) {
     let carrito = guardarCarritoStorage();
     const producto = carrito.find(item => item.id === id);
@@ -78,7 +78,7 @@ function cambiarCantidad(id, cantidad) {
     }
 };
 
-// Función ficticia para simular la compra
+//Función ficticia para simular la compra
 function comprarAhora() {
     Swal.fire({
         title: 'Compra realizada',
@@ -92,7 +92,7 @@ function comprarAhora() {
     eliminarCarrito();
 }
 
-// Función para vaciar el carrito
+//Función para vaciar el carrito
 function eliminarCarrito() {
     localStorage.removeItem('carrito');
     productosEnCarrito();

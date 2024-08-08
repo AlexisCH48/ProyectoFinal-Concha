@@ -1,8 +1,8 @@
+//Funcion para buscar productos 
+document.getElementById('botonBuscar').addEventListener('click', function() {
+    const searchInput = document.getElementById('buscarInput').value.toLowerCase();
 
-document.getElementById('searchButton').addEventListener('click', function() {
-    const searchInput = document.getElementById('searchInput').value.toLowerCase();
-
-     // Verificar si el campo de búsqueda está vacío
+    //Verificar si el campo de búsqueda está vacío
     if (searchInput.trim() === '') {
         Swal.fire({
             title: 'Campo de búsqueda vacío',
@@ -11,14 +11,14 @@ document.getElementById('searchButton').addEventListener('click', function() {
         });
         return;
     }
-
+    //Guardar el localstorage en una variable para filtar los productos
     const productos = JSON.parse(localStorage.getItem('productos')) || [];
-    const filteredProducts = productos.filter(product => product.title.toLowerCase().includes(searchInput));
-
-    if (filteredProducts.length > 0) {
-        let productList = '<div class="list-group">';
-        filteredProducts.forEach(product => {
-            productList += `
+    const productosFiltrados = productos.filter(product => product.title.toLowerCase().includes(searchInput));
+    //Validacion de datos de los productos (muestra los productos en caso de que filterporducts)
+    if (productosFiltrados.length > 0) {
+        let productosLista = '<div class="list-group">';
+        productosFiltrados.forEach(product => {
+            productosLista += `
             <div class="container text-center list-group-item">
                 <div class="row">
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -38,16 +38,15 @@ document.getElementById('searchButton').addEventListener('click', function() {
                 </div>
             </div>`;
         });
-        productList += '</div>';
-        Swal.fire({
+        productosLista += '</div>';
+        Swal.fire({ //Muestra los productos encontrados en una ventana emergente
             title: 'Productos Encontrados',
-            html: productList,
+            html: productosLista,
             width :'70%',
             icon: 'success'
-            
         });
     } else {
-        Swal.fire({
+        Swal.fire({ //Muestra una ventana emergente si es que no encuentra los productos
             title: 'No se encontraron productos',
             text: 'Intenta con otro término de búsqueda.',
             icon: 'error'

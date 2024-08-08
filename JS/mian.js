@@ -1,6 +1,6 @@
-const API_URL = "https://fakestoreapi.com";
+const API_URL = "https://fakestoreapi.com"; //Url api 
 let productos = [];
-
+//Cargar datos desde la api consumida
 function cargarProductos(API_URL) {
     fetch(`${API_URL}/products`)
         .then(res => res.json())
@@ -10,11 +10,11 @@ function cargarProductos(API_URL) {
             mostrarProductos(productos); // Mostrar todos los productos al cargar
         });
 }
-
+// Funcion para integrar las card con los datos de los productos (DOM)
 function mostrarProductos(productos) {
     let productosHTML = "";
 
-    productos.forEach(element => {
+    productos.forEach(element => { //iteracion de los datos por producto
         productosHTML += `
         <div class="card text-center">
             <img src="${element.image}" class="imagenProducto card-img-top" alt="${element.title}" onclick="detalleProducto(${element.id});">
@@ -29,7 +29,7 @@ function mostrarProductos(productos) {
     });
     document.getElementById("contenedorProductos").innerHTML = productosHTML;
 }
-
+// Funcion para mostrar el detalle los datos de cada producto
 function detalleProducto(id) {
     const producto = productos.find(item => item.id == id);
     if (producto) {
@@ -53,7 +53,7 @@ function detalleProducto(id) {
             customClass: {
                 confirmButton: 'custom-confirm-button'
             }
-        }).then((result) => {
+        }).then((result) => { //Agrega la funcion de agregar el producto al carrito desde la ventana emergente
             if (result.isConfirmed) {
                 agregarAlCarrito(id); // Llama a la función agregarAlCarrito con el ID del producto
             }
