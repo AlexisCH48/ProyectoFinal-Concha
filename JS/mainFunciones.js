@@ -13,6 +13,13 @@ function agregarAlCarrito (id){
     };
     localStorage.setItem("carrito", JSON.stringify(carrito));
     botonCarrito()
+    Swal.fire({
+        title: 'Producto agregado',
+        text: `${producto.title} ha sido agregado al carrito.`,
+        icon: 'success',
+        timer: 3000,
+        showConfirmButton: false
+    });
 }
 
 // funcion para eliminar un producto de la lista en el carrito

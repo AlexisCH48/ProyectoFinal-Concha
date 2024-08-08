@@ -68,27 +68,28 @@ a {
     transform: translate(-50%, -50%); 
     z-index: 10;
     filter: drop-shadow(
-        0 0 5px rgba(0, 0, 0, .8)
+        0 0 5px rgba(0, 0, 0, .5)
     );
 }
 
-.hero-content h1 {
+.hero-content h2 {
     margin: 0;
     font-size: 36px;
     margin-bottom: 15px;
     text-align: center;
     color: azure;
-    text-shadow: 0px 1px 5px #000;
+    text-shadow: 0px 2px 7px #000;
     
 }
 
-.hero-content p {
+.hero-content h3 {
     margin: 0;
-    font-size: 23px;
-    font-weight: 300;
-    color: azure;
+    font-size: 24px;
+    font-weight: 600;
+    color: black;
     margin-bottom: 20px;
-    text-shadow: 0px 1px 5px #000;
+    text-shadow: 0px 1px 5px azure;
+    border: azure;
 }
 
 .hero-content button {
@@ -158,10 +159,11 @@ main {
 }
 
 .agregarProducto, .custom-confirm-button {
-    border: 0;
+    font-size: 1.20rem;
     background-color: black;
     color: azure ;
-    padding: .4rem;
+    padding: .6rem;
+    margin: .5rem;
     text-transform: uppercase;
     border-radius: 2rem;
     cursor: pointer;
@@ -208,22 +210,86 @@ footer {
 
 }
 .imagen {
-    margin: 0 auto; /* Centra la imagen horizontalmente */
+    margin: 0 auto;
     height: 400px;
     width: 400px;
 }
 
+/* buscador */
 
+.input-group {
+    display: flex;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.399);
+    box-shadow: 0px 0px 0px 2px rgba(51, 51, 51, 0.45);
+    padding: 1rem;
+    color: black;
+    text-transform: uppercase;
+    border-radius: 1rem;
+    gap: .75rem;
+}
+
+.input-group .btn{
+    border: 0;
+    background-color: black;
+    color: azure ;
+    padding: .4rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid azure;
+    transition: background-color .2s, color .2s;
+}
+
+.list-group-item img{
+    width: 70px; 
+    height: 70px; 
+    margin-right: 10px;
+}
+
+/* contacto */
+
+#contactForm{
+    background-color: rgba(128, 128, 128, 0.399);
+    box-shadow: 0px 0px 0px 2px rgba(51, 51, 51, 0.45);
+    padding: 1rem;
+    color: black;
+    border-radius: 1rem;
+}
+
+.form-label{
+    font-size: 25px;
+    font-weight: 450;
+    text-shadow: 0px 1px 2px #000;
+}
+
+#contactForm .btn{
+    border: 0;
+    background-color: black;
+    color: azure ;
+    padding: .5rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 1px solid azure;
+    transition: background-color .2s, color .2s;
+}
+
+.form-control{
+    background-color: rgba(128, 128, 128, 0.399);
+    box-shadow: 0px 0px 0px 2px rgba(51, 51, 51, 0.45);
+    padding: 1rem;
+    border-radius: 1rem;
+}
 
 /* carrito */
-
 .contenedorCarrito {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.carritoVacio, .carritoComprado {
+.carritoVacio, .carritoComprado, .searchSub {
     color: black;
     font-size: 1.50rem;
     display: flex;
@@ -237,8 +303,6 @@ footer {
 }
 
 .carritoProducto {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     background-color: rgba(128, 128, 128, 0.399);
     color: black;
@@ -253,8 +317,16 @@ footer {
     border-radius: 1rem;
 }
 
-.carritoProducto small {
-    font-size: 1.25rem;
+.carritoProducto .titulosCarrito{
+    font-size: 1.50rem;
+    font-weight: bold;
+}
+
+.carritoProductoCantidad button{
+    font-size: large;
+}
+.carritoProducto p, .carritoAcciones p{
+    font-size: 1.20rem;
 }
 
 .carritoProductoEliminar {
@@ -268,7 +340,8 @@ footer {
 .carritoAcciones {
     display: flex;
     justify-content: space-between;
-    margin: 0 2rem 0 2rem ;
+    padding: 0 2rem 2rem 0;
+    margin: 0 15rem 0 17rem ;
 }
 
 .carritoAccionesVaciar {

@@ -1,4 +1,4 @@
-// script.js
+// Formulario de contacto.js
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita el envío del formulario
     
@@ -8,7 +8,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     const mensaje = document.getElementById('textArea').value;
 
     if (nombre && apellido && email && mensaje) {
-        fetch('https://tu-servidor.com/api/contact', {
+        fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -41,4 +41,6 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         });
     }
 });
+
+
 

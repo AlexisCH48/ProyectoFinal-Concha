@@ -26,21 +26,14 @@ anime({
 });
 
 anime({
-    targets: '.tituloPrincipal',
+    targets: '.tituloPrincipal, .banner, .input-group, .searchSub, #contactForm, .carritoProducto, .carritoAcciones, .carritoVacio',
     translateY: [100,0],
     opacity: [0, 1],
     easing: 'easeInQuad',
-})
-
-anime({
-    targets: '.banner',
-    translate: [100,0],
-    opacity: [0, 1],
-    easing: 'easeInQuad',
-})
+});
 
 document.addEventListener('DOMContentLoaded', function () {
-    const filterButtons = document.querySelectorAll('#filtros'); // Cambia '.filter-button' por tu selector de botones
+    const filterButtons = document.querySelectorAll('#filtros'); 
     // Configuración de la animación
     const animationDuration = 800; // Duración de la animación en milisegundos
     const delayBetweenButtons = 300; // Retardo entre cada botón en milisegundos
@@ -89,6 +82,6 @@ function reiniciarAnimacionesTarjetas() {
             easing: 'easeOutExpo',
         });
     });
-}
+};
 
 

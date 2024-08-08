@@ -22,8 +22,8 @@ function mostrarProductos(productos) {
                 <h5 class="card-title nombreProducto">${element.title}</h5>
                 <p class="card-text precioProducto">$${element.price} CLP</p>
             </div>
-            <div class="card-footer text-body-secondary">
-                <p class="card-text"><button class="agregarProducto" onclick="agregarAlCarrito(${element.id});">Agregar (+)</button></p>
+            <div class="card-footer text-body-secondary d-flex justify-content-center">
+                <button class="agregarProducto" onclick="agregarAlCarrito(${element.id});">Agregar <i class="bi bi-plus-circle"></i></button>
             </div>
         </div>`;
     });
