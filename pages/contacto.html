@@ -12,28 +12,35 @@
 </head>
 <body>
     <header class="menuNav">
-        <nav class="navbar justify-content-center py-3">
-            <div class="col d-flex align-items-star ps-5">
-                <a class="logo" href="../index.html"><i class="bi bi-hypnotize"></i></a>
+        <nav class="navbar navbar-expand-md sticky-top justify-content-center py-3">
+            <div class="col d-flex align-items-start ps-5">
+                <a class="logo navbar-brand" href="../index.html"><i class="bi bi-hypnotize"></i></a>
             </div>
-            <ul class="nav pe-5">
-                <li class="nav-item pe-5">
-                    <a class="botonMenu nav-link active" aria-current="page" href="../index.html"><i class="bi bi-boxes p-1"></i>Productos</a>
-                </li>
-                <li class="nav-item pe-5">
-                    <a class="botonMenu nav-link" href="../pages/buscar.html"><i class="bi bi-search p-1"></i>Buscar</a>
-                </li>
-                <li class="nav-item pe-5">
-                    <a class="botonMenu nav-link" href="../pages/contacto.html"><i class="bi bi-journal-bookmark p-1"></i>Contacto</a>
-                </li>
-                <li class="nav-item pe-5">
-                    <a class="botonCarrito nav-link" href="../pages/carrito.html"><i class="bi bi-cart4 p-1"></i>Carrito
-                        <span id="carritoNumero"></span>
-                    </a>
-                </li>
-            </ul>
+            <div class=" pe-5">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon pe-3"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse nav justify-content-end pe-4" id="navbarNav">
+                <ul class="navbar-nav nav pe-5">
+                    <li class="nav-item pe-5">
+                        <a class="botonMenu nav-link active" aria-current="page" href="../index.html"><i class="bi bi-boxes p-1"></i>Productos</a>
+                    </li>
+                    <li class="nav-item pe-5">
+                        <a class="botonMenu nav-link" href="../pages/buscar.html"><i class="bi bi-search p-1"></i>Buscar</a>
+                    </li>
+                    <li class="nav-item pe-5">
+                        <a class="botonMenu nav-link" href="../pages/contacto.html"><i class="bi bi-journal-bookmark p-1"></i>Contacto</a>
+                    </li>
+                    <li class="nav-item pe-5">
+                        <a class="botonCarrito nav-link" href="../pages/carrito.html"><i class="bi bi-cart4 p-1"></i>Carrito
+                            <span id="carritoNumero"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav>
-    </header>
+    </header> 
 
     <main class="container-fluid py-5 text-center">
         <h1 class="tituloPrincipal">Contacto</h1>

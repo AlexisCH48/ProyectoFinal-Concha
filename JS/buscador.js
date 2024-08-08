@@ -21,18 +21,18 @@ document.getElementById('searchButton').addEventListener('click', function() {
             productList += `
             <div class="container text-center list-group-item">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <img src="${product.image}" alt="${product.title}">
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <h2 class="fs-5 fw-medium">Nombre</h2>
                         <span>${product.title}</span>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <h2 class="fs-5 fw-medium">Precio</h2>
                         <span>$${product.price} CLP</span>
                     </div>
-                    <div class="col d-flex align-items-center">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex align-items-center">
                         <button class="agregarProducto" onclick="agregarAlCarrito(${product.id});">Agregar (+)</button>
                     </div>
                 </div>

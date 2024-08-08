@@ -39,7 +39,7 @@ function productosEnCarrito(){
         }
         //mostar el total y el boton de compra
         productosHTML += `
-        <div class=" container carritoAcciones">
+        <div class="container carritoAcciones">
             <div class="carritoAccionesIzquierda">
                 <button class="carritoAccionesVaciar" onclick="eliminarCarrito();">Vaciar Carrito</button>
             </div>
